@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Playing_In_Traffic"
         mc:Ignorable="d"
-        Title="GameWindow" Height="300" Width="300">
-    <Grid>
-        
+        Title="GameWindow">
+    <Grid x:Name="Main_Panel" Background="Black">
+        <!--Grid Formatting -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="3*" MinWidth="400"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Bottom_Panel" Grid.ColumnSpan="5" Grid.Row="3" Background="#FF950E0E"/>
+        <GridSplitter x:Name="gridSplitterLeft" Grid.Column="1" Grid.RowSpan="2"  Grid.Row="1" HorizontalAlignment="Stretch" />
+        <GridSplitter x:Name="gridSplitterRight" Grid.Column="3" Grid.RowSpan="2"  Grid.Row="1" HorizontalAlignment="Stretch" />
+        <Grid x:Name="Left_Panel" Grid.Row="1" Grid.RowSpan="2" Background="#FF3AA25B" />
+        <Grid x:Name="Rigth_Panel" Grid.Row="1" Grid.RowSpan="2" Background="#FF3AA25B" Grid.Column="4" />
+        <Grid Grid.ColumnSpan="5" Background="#FFD4D2D2" Height="19"/>
     </Grid>
+
+
+
 </Window>
