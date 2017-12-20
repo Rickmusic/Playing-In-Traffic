@@ -8,11 +8,12 @@ namespace Playing_In_Traffic
 {
     class GameSpace
     {
-        private static int gameSizeX = 300;
-        private static int gameSizeY = 300;
-        private static Object[,] gameBoard;
+        public int gameSizeX = 300;
+        public int gameSizeY = 300;
+        public Object[,] gameBoard;
+        
 
-       static void __init__()
+        public GameSpace()
        {
             gameBoard =  new Object[gameSizeX, gameSizeY];
             for (int x = 0; x < gameBoard.GetLength(0); x++)
@@ -24,7 +25,7 @@ namespace Playing_In_Traffic
             }
        }
 
-       static void __init__(int input)
+        public GameSpace(int input)
        {
            gameSizeX = input;
            gameSizeY = input;
@@ -39,12 +40,7 @@ namespace Playing_In_Traffic
             }
        }
 
-        internal void add(int v1, int v2, object house)
-        {
-            throw new NotImplementedException();
-        }
-
-        static void __init__(int inputX, int inputY)
+        public GameSpace(int inputX, int inputY)
         {
             gameSizeX = inputX;
             gameSizeY = inputY;
@@ -58,5 +54,13 @@ namespace Playing_In_Traffic
                 }
             }
         }
+
+        public void add(int x, int y, object obj)
+        {
+            gameBoard[x, y] = obj;
+
+        }
+      
+
     }
 }

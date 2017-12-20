@@ -8,5 +8,11 @@ namespace Playing_In_Traffic
 {
     class Vehical
     {
+        Building destination;
+
+        public void takeTurn()
+        {
+
+        }
     }
 }

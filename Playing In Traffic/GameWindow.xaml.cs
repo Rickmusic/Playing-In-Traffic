@@ -26,21 +26,84 @@ namespace Playing_In_Traffic
 
 
         static GameSpace gameSpace;
-
+        GridLength rectSize = new GridLength(30);
+        SolidColorBrush greenBrush = new SolidColorBrush(System.Windows.Media.Colors.LawnGreen);
+        SolidColorBrush brownBrush = new SolidColorBrush(System.Windows.Media.Colors.Brown);
         public GameWindow()
         {
             InitializeComponent();
-
-            TestRun1();
-           
-
-
+            Startup();
         }
 
-        private void TestRun1()
+        private void Startup()
         {
-            gameSpace = new GameSpace();
-            gameSpace.add(100, 100, house);
+            gameSpace = new GameSpace(50,50);
+            House house = new House();
+            gameSpace.add(20,20, house);
+            initVisualSpace();
+            populateGrid();
+        }
+
+        private void initVisualSpace()
+        {
+            MainBoard.Children.Clear();
+            MainBoard.RowDefinitions.Clear();
+            MainBoard.ColumnDefinitions.Clear();
+
+            // Create Grid //
+            for (int x = 0; x < gameSpace.gameBoard.GetLength(0); x++)
+            {
+                MainBoard.RowDefinitions.Add(new RowDefinition());
+            }
+            for (int x = 0; x < gameSpace.gameBoard.GetLength(0); x++)
+            {
+                MainBoard.RowDefinitions[x].Height = rectSize;
+            }
+            for (int y = 0; y < gameSpace.gameBoard.GetLength(1); y++)
+            {
+                MainBoard.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+            for (int x = 0; x < gameSpace.gameBoard.GetLength(0); x++)
+            {
+                MainBoard.ColumnDefinitions[x].Width = rectSize;
+            }
+        }
+
+        private void populateGrid()
+        {
+            // Populate Grid // 
+            for (int x = 0; x < gameSpace.gameBoard.GetLength(0); x++)
+            {
+                for (int y = 0; y < gameSpace.gameBoard.GetLength(1); y++)
+                {
+                    Rectangle rect = new Rectangle();
+                    Grid.SetRow(rect, x);
+                    Grid.SetColumn(rect, y);
+                    rect.StrokeThickness = 0;
+                    MainBoard.Children.Add(rect);
+                    if (gameSpace.gameBoard[x, y] == null)
+                    {
+                        rect.Fill = greenBrush;
+
+                    }
+                    else
+                    {
+                        rect.Fill = brownBrush;
+                    }
+                }
+            }
+        }
+
+        private void startTime(object sender, RoutedEventArgs e)
+        {
+            playBtn.Content = "Running";
+            // Create turn thread // 
+        }
+
+        private void stopTime(object sender, RoutedEventArgs e)
+        {
+            playBtn.Content = "Start time";
+            // Terminate turn thread // 
         }
     }
 }

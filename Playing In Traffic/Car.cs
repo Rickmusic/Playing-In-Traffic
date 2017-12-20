@@ -8,5 +8,6 @@ namespace Playing_In_Traffic
 {
     class Car : Vehical
     {
+
     }
 }
