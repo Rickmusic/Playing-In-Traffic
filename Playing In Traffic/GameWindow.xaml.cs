@@ -19,9 +19,28 @@ namespace Playing_In_Traffic
     /// </summary>
     public partial class GameWindow : Window
     {
+        // Game space
+        // Array of buildings
+        // Array of active vehicals
+        // Time or turns // 
+
+
+        static GameSpace gameSpace;
+
         public GameWindow()
         {
             InitializeComponent();
+
+            TestRun1();
+           
+
+
+        }
+
+        private void TestRun1()
+        {
+            gameSpace = new GameSpace();
+            gameSpace.add(100, 100, house);
         }
     }
 }

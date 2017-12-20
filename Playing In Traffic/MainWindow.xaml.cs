@@ -27,8 +27,6 @@ namespace Playing_In_Traffic
 
         private void StartGame(object sender, RoutedEventArgs e)
         {
-
-            Console.Out.WriteLine("Click");
             GameWindow game = new GameWindow();
             game.Show();
          
