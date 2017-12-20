@@ -1,0 +1,35 @@
+﻿<Window x:Class="Playing_In_Traffic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Playing_In_Traffic"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Grid ShowGridLines="False" Background="Black">
+   <!--Grid Formatting -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Grid Content -->
+        <Label x:Name="Logo" Content="Playing in Traffic" Grid.ColumnSpan="1" Grid.RowSpan="1"  Grid.Row="1" Grid.Column="1" Foreground="#FFF11207" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Wide Latin" FontSize="24" />
+        <Button  x:Name="Start" Content="Start Game" Grid.ColumnSpan="1" Grid.RowSpan="1"  Grid.Row="3" Grid.Column="1" Foreground="#FFC586" Background="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Yu Gothic UI" FontSize="18" BorderBrush="{x:Null}" Click="StartGame"/>
+        <Button  x:Name="End" Content="End Game" Grid.ColumnSpan="1" Grid.RowSpan="1"  Grid.Row="4" Grid.Column="1" Foreground="#FFC58617" Background="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Yu Gothic UI" FontSize="18"  BorderBrush="{x:Null}" Click="EndGame"/>
+        
+        
+    </Grid>
+</Window>
